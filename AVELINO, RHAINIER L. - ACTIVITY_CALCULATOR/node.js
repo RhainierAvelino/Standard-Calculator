@@ -34,20 +34,25 @@ function calculate() {
         return; 
     }
     let currentValue = parseFloat(display.textContent); // get the value
+    let result;
     if (currentOperator == '+') {
-        display.textContent = memory + currentValue; // add
+        result = memory + currentValue; // add
     } else if (currentOperator == '-') {
-        display.textContent = memory - currentValue; // minus
+        result = memory - currentValue; // minus
     } else if (currentOperator == '*') {
-        display.textContent = memory * currentValue; //mutiply
+        result = memory * currentValue; // multiply
     } else if (currentOperator == '/') {
         if (currentValue == 0) {
             alert('Cannot divide by zero!');
             return;
         }
-        display.textContent = memory / currentValue; //divide
+        result = memory / currentValue; // divide
     }
-    currentOperator = null; 
+    if (Number.isInteger(result)) {
+        display.textContent = result; 
+    } else {
+        display.textContent = result.toPrecision(3); 
+    }    currentOperator = null; 
     isEqualPressed = true; 
 }
 
