@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Standard Calculator - Rhainier L. Avelino | BSIT 3-3 | ACTIVITY</title>
+    <title>Enhanced Calculator</title>
     <link rel="stylesheet" href="calcuDesign.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>STANDARD CALCULATOR | ACTIVITY</h1>
+        <h1>Enhanced Calculator</h1>
         <h2>Rhainier L. Avelino</h2>
-        <h3>BSIT 3-3</h3>
-        <h4>Polytechnic University of the Philippines</h4>
     </header>
     <div class="calculator">
+        <div class="preview" id="preview">0</div>
         <div class="display" id="display">0</div>
         <div class="buttons">
             <button class="button memory" id="ms">MS</button>
@@ -34,20 +33,20 @@
             <button class="button" onclick="appendNumber('2')">2</button>
             <button class="button" onclick="appendNumber('3')">3</button>
             <button class="button operator" onclick="setOperator('-')">-</button>
-            <button class="button" onclick="appendNumber('0')">0</button>
             <button class="button" onclick="appendNumber('.')">.</button>
-            <button class="button operator" onclick="calculate()">=</button>
+            <button class="button" onclick="appendNumber('0')">0</button>
+            <button class="button operator" onclick="setOperator('/')">÷</button>
             <button class="button operator" onclick="setOperator('+')">+</button>
+            <button class="button operator" onclick="calculatePercentage()">%</button>
             <button class="button clear" onclick="clearDisplay()">C</button>
-            <button class="button memory" id="mc">MC</button>
-            <button class="button memory" id="historyButton">MH</button>
-            <button class="button operator" onclick="setOperator('/')"><span>&#247;</span></button>
-        </div>      
+            <button class="button operator" onclick="toggleSign()">±</button>
+            <button class="button operator" onclick="calculate()">=</button>
+        </div>
         <div class="numSys">
             <button class="button numberSystem" onclick="decimalToBinary()">Bin</button>
             <button class="button numberSystem" onclick="decimalToOctal()">Oct</button>
             <button class="button numberSystem" onclick="decimalToHexadecimal()">Hex</button>
-        </div>  
+        </div>
     </div>
     <script src="node.js"></script>
 </body>
